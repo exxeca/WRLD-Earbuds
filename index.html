@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Earbuds - Ezekiel Celis</title>
+  <link rel="stylesheet" href="css/grid.css">
+  <link rel="stylesheet" href="css/main.css">
+  
+  <meta name="description" content="Ezekiel Celis — Front-End Developer & Visual Designer. Clean UI, smooth motion, accessible, responsive web experiences.">
+
+</head>
+
+<body>
+
+  <!-- Background -->
+
+  <!-- Animated gooey gradient background -->
+<section id="java-bg" aria-hidden="true">
+  <div class="gradient-bg">
+
+    <!-- Noise overlay -->
+    <svg class="noiseBg" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <filter id="noiseFilterBg">
+        <feTurbulence type="fractalNoise" baseFrequency="0.6" stitchTiles="stitch" />
+      </filter>
+      <rect width="100%" height="100%" filter="url(#noiseFilterBg)" />
+    </svg>
+
+    <svg class="svgBlur" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="goo">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+          <feColorMatrix in="blur" type="matrix"
+            values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo"/>
+          <feBlend in="SourceGraphic" in2="goo" />
+        </filter>
+      </defs>
+    </svg>
+
+    <!-- Blobs -->
+    <div class="gradients-container">
+      <div class="g1"></div>
+      <div class="g2"></div>
+      <div class="g3"></div>
+      <div class="g4"></div>
+      <div class="g5"></div>
+      <div class="interactive"></div>
+    </div>
+
+  </div>
+</section>
+
+
+  
+
+  <!-- Logo -->
+
+<header class="grid-con container">
+  <h1 class="hidden">Header</h1>
+    <div id="logo" class="box col-start-1 col-end-7 m-col-start-1 m-col-end-6 l-col-start-1 l-col-end-4">
+      <a href="index.html">WRLD BUDS</a>
+    </div>
+
+  <!-- Menu -->
+
+  <div id="menu-style"
+     class="box col-start-7 col-end-13 m-col-start-6 m-col-end-13 l-col-start-4 l-col-end-13">
+
+  <!-- Pill trigger -->
+  <button id="menuToggle"
+          class="menu-toggle"
+          aria-haspopup="dialog"
+          aria-expanded="false"
+          aria-controls="menuDrawer">
+    <span class="menu-label">MENU</span>
+    <span class="menu-dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+  </button>
+</div>
+
+<!-- Drawer lives outside the grid so it can overlay the page -->
+<aside id="menuDrawer" class="menu-drawer" hidden>
+  <div class="menu-scrim" data-close></div>
+
+  <div class="menu-panel" role="dialog" aria-modal="true" aria-labelledby="menuTitle">
+    <div class="menu-header">
+      <h2 id="menuTitle" class="eyebrow">MENU</h2>
+      <button class="close" data-close aria-label="Close menu">✕</button>
+    </div>
+
+    <nav class="site-nav" aria-label="Primary">
+      <ul class="menu-list">
+        <li class="active"><a href="index.html" aria-current="page"><span class="bullet">•</span> Home</a></li>
+        <li><a href="index.html"><span class="bullet">•</span> Sound</a></li>
+        <li><a href="index.html"><span class="bullet">•</span> Craft</a></li>
+        <li><a href="index.html"><span class="bullet">•</span> Controls</a></li>
+        <li><a href="index.html"><span class="bullet">•</span> Power</a></li>
+        <li><a href="index.html"><span class="bullet">•</span> Specs</a></li>
+      </ul>
+    </nav>
+
+    <button class="menu-cta">Preorder</button>
+  </div>
+</aside>
+
+</header>
+
+<!-- Hero -->
+
+<main id="home-page" class="container grid-con">
+  <section class="box col-span-full hero-layer">
+    <h1 class="box">Sound without Boundaries.</h1>
+    <p class="box">Elevate your senses through timeless resonance.</p>
+    
+<!-- Model Viewer -->
+
+  <model-viewer
+        src="/models/earbuds-case_compressed.glb"
+        ar ar-modes="webxr scene-viewer quick-look"
+        camera-controls
+        camera-target="auto"
+        camera-orbit="0deg 70deg 120%"         
+        min-camera-orbit="auto auto 70%"
+        max-camera-orbit="auto auto 220%"
+        min-field-of-view="10deg"
+        max-field-of-view="60deg"
+        tone-mapping="neutral"
+        poster="images/poster.webp"
+        shadow-intensity="1.1"
+        exposure="0.87"
+        shadow-softness="0.86"
+        auto-rotate>
+    
+
+
+    <div class="progress-bar hide" slot="progress-bar">
+      <div class="update-bar"></div>
+    </div>
+
+    <!-- <button slot="ar-button" id="ar-button">
+        View in your space
+    </button>
+
+    <div id="ar-prompt">
+        <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
+    </div> -->
+
+    
+
+  </model-viewer>
+
+
+
+  <section class="box col-span-full text-anim">
+    <p class="box reveal-words">Meet WRLD Earbuds — where sound and design live in perfect balance. Every detail is crafted with intention, from the smooth contour that fits naturally in your ear to the deep, clear tones that move with you. It’s not just about listening — it’s about feeling connected to every note, every word, every moment.
+
+    Lightweight, effortless, and built to last, WRLD Earbuds redefine what it means to tune in. Whether you’re on the move, at work, or lost in your favorite playlist, the sound stays rich and real — just the way it was meant to be heard.
+    </p>
+    
+  </section>
+
+  <!-- EARBUDS - HOTSPOT-->
+
+<model-viewer
+  id="buds"
+  src="models/earbuds-hotspot_compressed.glb"
+  ar ar-modes="webxr scene-viewer quick-look"
+  camera-controls
+  tone-mapping="neutral"
+  poster="poster.webp"
+  shadow-intensity="1"
+  exposure="0.99"
+  shadow-softness="1"
+  auto-rotate
+  style="width:100%; height: clamp(520px, 66vh, 860px);">
+
+<!-- Fast Charging -->
+<button class="Hotspot" slot="hotspot-1"
+        data-position="-0.28835635086985045m 0.09772418776853803m -0.07027094408558496m"
+        data-normal="-0.703980875192079m -0.0488144275322052m -0.7085393983601036m"
+        data-visibility-attribute="visible">
+  <div class="HotspotAnnotation">
+    <span class="icon-wrap">
+      <img src="assets/icons/sound-wave.png" alt="" aria-hidden="true">
+    </span>
+    <span class="label-block">
+      <strong>Fast Charging</strong>
+      <span>5 minutes = up to 1 hour of play.</span>
+    </span>
+  </div>
+</button>
+
+<!-- Transparency -->
+<button class="Hotspot" slot="hotspot-2"
+        data-dir="left"
+        data-position="0.12104514014758655m 0.0895338018471383m -0.21589123984259317m"
+        data-normal="0.6697034511396701m 0.18631464668416425m -0.7188769991887142m"
+        data-visibility-attribute="visible">
+  <div class="HotspotAnnotation">
+    <span class="icon-wrap">
+      <img src="assets/icons/Transparency.svg" alt="" aria-hidden="true">
+    </span>
+    <span class="label-block">
+      <strong>Transparency</strong>
+      <span>Let in the world when you need awareness.</span>
+    </span>
+  </div>
+</button>
+
+<!-- Beamforming Mics -->
+<button class="Hotspot" slot="hotspot-3"
+        data-dir="left"
+        data-position="0.10045114234045893m -0.20399296174819315m 0.04069493041761199m"
+        data-normal="0.16935644755074358m -0.03524829334680406m 0.9849243379514643m"
+        data-visibility-attribute="visible">
+  <div class="HotspotAnnotation">
+    <span class="icon-wrap">
+      <img src="assets/icons/BeaformingMic.svg" alt="" aria-hidden="true">
+    </span>
+    <span class="label-block">
+      <strong>Beamforming Mics</strong>
+      <span>Focus on your voice. Cut wind and crowd noise.</span>
+    </span>
+  </div>
+</button>
+
+<!-- ANC -->
+<button class="Hotspot" slot="hotspot-4"
+        data-position="-0.22649748106243328m 0.046641427791005774m 0.12228575510150834m"
+        data-normal="0.10757218500007479m -0.03478111979835769m 0.9935886969565839m"
+        data-visibility-attribute="visible">
+  <div class="HotspotAnnotation">
+    <span class="icon-wrap">
+      <img src="assets/icons/FastCharging.svg" alt="" aria-hidden="true">
+    </span>
+    <span class="label-block">
+     <strong>Adaptive ANC</strong>
+      <span>Continuously reduces ambient noise in real-time.</span>
+    </span>
+  </div>
+</button>
+
+<!-- Custom Driver -->
+<button class="Hotspot" slot="hotspot-5"
+        data-position="-0.056m 0.02m 0.035m"
+        data-normal="0.1m 0.1m 0.98m"
+        data-visibility-attribute="visible">
+  <div class="HotspotAnnotation">
+    <span class="icon-wrap">
+      <img src="assets/icons/CustomDriver.svg" alt="" aria-hidden="true">
+    </span>
+    <span class="label-block">
+      <strong>Custom Driver</strong>
+      <span>Low distortion. Deep bass. Clear mids & highs.</span>
+    </span>
+  </div>
+</button>
+
+
+  </section>
+  
+</main>
+
+<!-- Footer -->
+
+  <footer class="site-footer container">
+    <p>2025 WRLD Buds</p>
+  </footer>
+
+  <!-- gsap -->
+
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+
+  <!-- Model Viewer -->
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
+
+<script defer src="js/main.js"></script>
+
+</body>
+
+</html>
