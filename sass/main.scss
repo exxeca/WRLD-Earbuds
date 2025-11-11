@@ -1,0 +1,17 @@
+/* sass/main.scss */
+
+// 1. Variables & Mixins
+@use 'variables';
+@use 'mixins';
+
+// 2. Base + Reset
+@use 'base';
+
+// 3. Layout Components
+@use 'layout';
+@use 'hero';
+@use 'menu';
+@use 'hotspots';
+
+// 4. Responsive Tweaks
+@use 'responsive';
