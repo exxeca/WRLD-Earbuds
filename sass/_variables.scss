@@ -1,0 +1,42 @@
+/* Global CSS custom props (tokens) */
+
+/* Menu + animation tokens */
+:root{
+  --menuW: clamp(300px, 36vw, 460px);
+  --menu-gap: 0px;
+  --menu-gutter: 24px;
+  --menu-top-offset: 0;
+  --menu-right-offset: -15px;
+
+  --chase-dur: 1.2s;
+  --chase-ease: cubic-bezier(.25,.7,.2,1);
+  --chase-start: .08s;
+  --blink-scale: 1.35;
+}
+
+/* Background gradient tokens */
+:root{
+  --color-bg1:#000; --color-bg2:#000;
+  --color1:0,43,112; --color2:0,0,255; --color3:143,147,255; --color4:30,96,160; --color5:10,40,90;
+  --color-interactive:120,160,255;
+  --circle-size:48vmax;
+  --blending: screen;
+}
+
+/* Hotspot tokens */
+:root{
+  --hs-color:#9bd1ff;
+  --hs-glass-bg:rgba(255,255,255,.08);
+  --hs-glass-brd:rgba(255,255,255,.22);
+  --hs-shadow:0 10px 30px rgba(0,0,0,.35);
+  --hs-dot:6px;
+  --hs-ring:28px;
+}
+
+/* Optional light theme */
+[data-theme="light"]{
+  --hs-glass-bg:rgba(255,255,255,.35);
+  --hs-glass-brd:rgba(0,0,0,.08);
+  --hs-shadow:0 6px 24px rgba(0,0,0,.18);
+  --hs-color:#5aa7ff;
+}
