@@ -14,9 +14,9 @@
 }
 
 .box { 
-  border: 1px dashed rgba(255,255,255,.25); 
+  /* border: 1px dashed rgba(255,255,255,.25);  */
   padding: 12px; 
-  border-radius: 5px; 
+  /* border-radius: 5px;  */
   text-align: left;
 }
 
